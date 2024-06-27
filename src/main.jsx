@@ -6,7 +6,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './views/Home.jsx'
 import AboutUs from './views/AboutUs.jsx'
 import Contact from './views/Contact.jsx'
-import Bloc from './views/Bloc.jsx'
+import QuizRecyclage from './components/QuizRecyclage.jsx'
+import Discover from './components/Discover.jsx'
+import Hero from './components/Hero.jsx'
+import FabriqEco from './views/FabriqEco.jsx'
+
 
 const router = createBrowserRouter ([
   {
@@ -30,8 +34,20 @@ const router = createBrowserRouter ([
         element: <Contact/>
       },
       {
-        path: 'bloc',
-        element: <Bloc/>
+        path: 'quiz',
+        element: <QuizRecyclage/>
+      },
+      {
+        path:'decoucrons-le-recyclage',
+        element:<Discover/>
+      },
+      {
+        path:'fabrique-éco',
+        element:<FabriqEco/>
+      },
+      {
+        path:'hero',
+        element:<Hero/>
       }
       
     ]

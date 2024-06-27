@@ -1,5 +1,5 @@
-import React from "react";
 
+// eslint-disable-next-line react/prop-types
 const CardComponent = ({ image, title, text, hashtags }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg text-[#13250e] w-[25rem] md:h-[23rem] bg-[#d3eac8] ">

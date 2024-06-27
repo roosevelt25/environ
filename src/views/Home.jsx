@@ -1,301 +1,276 @@
-// import React from "react";
+import "animate.css";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Depot from "../images/depot.jpg";
-// import Recyclage from "../images/recyclage-dechets.jpg";
-import CustomTextSection from "../components/CustomTextSection";
-import CustomCard from "../components/CustomCard";
-import TestimonialCard from "../components/TestimonialCard";
-import Yellow from "../images/yellow.png";
-import Blue from "../images/blue.png";
-import Green from "../images/green.png";
-import Red from "../images/red.png";
-import NewsletterForm from "../components/NewsLetter";
-import Waste from "../images/waste.jpg";
+import Hero1 from "../images/super hero.png";
 import GallerieSection from "../components/GallerieSection";
-import Logorec from "../images/logo recyclage.png";
-import BlogCard from "../components/BlogCard";
-import PartnerLogos from "../components/PartnerLogos";
+import Logorec from "../images/Recyclage.png";
+import { Blog } from "./Blog";
+import { Step } from "../components/Step";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Tri from "../components/Tri";
+import Hero from "../components/Hero";
 
 function Home() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
-      <div className="bg-[url('/src/images/home-picture.jpg')] bg-cover bg-center relative flex flex-col h-full w-full py-5 md:py-8 lg:py-10 xl:py-20">
-        <div className="absolute w-full h-full bg-black top-0 left-0 bg-opacity-25 z-0"></div>
-        <div className="font-semibold text-white max-w-screen-xl mx-auto w-full z-10 space-y-5 md:space-y-7 lg:space-y-10">
-          <div className="flex items-center text-3xl lg:text-5xl font-serif w-full md:w-1/2">
-            <h2 className="leading-[1.20]">
-              Les déchets d&apos;aujourd&apos;hui sont les problèmes de demain.
-              Faisons en sorte qu&apos;il n&apos;y ait pas de place pour eux
-              dans notre avenir.
-            </h2>
+      {/* section hero */}
+      <Hero />
+      <div className="px-8 pt-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:mx-8 lg:py-20">
+        <div className="grid row-gap-10 lg:grid-cols-2">
+          <div className=" md:ml-14 xl:ml-14 lg:ml-14" data-aos="zoom-out-down">
+            <img
+              src={Hero1}
+              alt="World"
+              className="bg-cover bg-center md:h-[20rem] "
+            />
           </div>
-          <div className="text-sm">
-            <button className="font-bold text-xl text-[#3d692c] border border-[#3d692c] hover:text-white w-full md:w-auto hover:border-[#f6faf3] flex items-center justify-center focus:outline-none bg-[#fff] hover:bg-[#3d692c] focus:ring-4 rounded-lg px-6 py-2 dark:text-white dark:border-[#3d692c] dark:hover:bg-[#3d692c]">
-              <Link>Devenez un Gardien</Link>
+          <div className=" space-y-5 pt-10 text-center">
+            <h3 className=" font-bold text-2xl text-[#3a260e] md:text-4xl max-w-screen-sm mx-auto  lg:mb-16">
+              Les Super-Héros du Recyclage
+            </h3>
+            <p>
+              Dans le monde d’Environ, les enfants sont les véritables
+              super-héros ! Ils ont le pouvoir de changer le destin de notre
+              planète, une poubelle à la fois. Notre mascotte, le Héros du
+              Recyclage, les guide dans cette mission cruciale. Ensemble, ils
+              trient, recyclent et préservent notre environnement.
+              Rejoignez-nous pour former une équipe de super-héros du recyclage
+              et sauver notre Terre !
+            </p>
+            <button className=" border border-[#75551e] hover:bg-[#8c6a1c] md:ml-10 flex justify-center ">
+              <Link
+                to="decoucrons-le-recyclage"
+                className="px-5 p-3 text-sm font-bold text-center"
+              >
+                Je m&apos;engage
+              </Link>
             </button>
           </div>
         </div>
       </div>
-
-      <div className="max-w-screen-xl mx-auto py-10 lg:py-16 xl:py-20">
-        <h3 className="text-center font-bold text-2xl md:text-3xl max-w-screen-sm mx-auto mb-5 md:mb-10 lg:mb-16">
-          Éveillez-vous : Le Désastre des Déchets et le Futur Fragile de nos
-          Enfants
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 items-center">
-          <div className="w-full">
-          <img
-              src={Depot}
-              alt="World"
-              className="h-96 w-full object-cover rounded-full"
-            />
-          </div>
-          <div className="w-full space-y-5">
-            <p>
-              Imaginez un instant un monde sans vie et vous êtes la dernière
-              personne vivante au milieu des déchets. Les déchets s&apos;étendent à
-              perte de vue, étouffant toute forme de vie. Les océans, autrefois
-              grouillants de vie, sont désormais des étendues stériles, polluées
-              par des tonnes de plastique et des débris toxiques.
-            </p>
-            <p>
-              Les forêts luxuriantes ont cédé la place à des paysages arides et
-              dévastés par la déforestation. Les phénomènes naturels se
-              déchaînent avec une violence inouïe, les tempêtes, les inondations
-              et les incendies ravageant tout sur leur passage, exacerbés par le
-              réchauffement climatique que nous avons ignoré pendant trop
-              longtemps. Les ressources naturelles s'épuisent, l'air devient
-              irrespirable, l'eau non potable. Dans ce monde apocalyptique, les
-              conséquences de notre négligence sont devenues irréversibles.
-            </p>
-            <p>
-              Mais ce cauchemar n'est pas inévitable. En prenant des mesures
-              drastiques dès maintenant pour réduire notre empreinte écologique,
-              nous pouvons encore changer le cours des choses et préserver notre
-              planète pour les générations futures.
-            </p>
-          </div>
-        </div>
-        
-      </div>
-
-      <div className="py-16">
-        <div className="text-center font-serif text-[#13250e] px-4 md:px-[10rem]">
-          <h1 className="text-3xl font-bold">
-            Tri des Déchets : Le Premier Pas vers un Avenir Durable.
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-16 gap-5 pt-10">
-          <CustomCard
-            title="La Poubelle Bleue : Votre Alliée dans la Lutte contre le Plastique"
-            description="Dans notre société moderne, le plastique est omniprésent, mais saviez-vous que beaucoup de ces produits peuvent être recyclés?"
-            buttonText="En savoir plus"
-            imageSrc={Blue}
-          />
-
-          <CustomCard
-            title="La Poubelle Jaune : La Voie vers un Recyclage Renouvelé"
-            description="La poubelle jaune est un symbole de l'engagement envers le recyclage des emballages. Mais que pouvez-vous y mettre exactement?"
-            buttonText="En savoir plus"
-            imageSrc={Yellow}
-          />
-
-          <CustomCard
-            title="La Poubelle Verte : L'Engagement pour un Avenir Écologique"
-            description="Le compostage est une excellente façon de réduire les déchets organiques tout en enrichissant votre sol. Si vous avez une poubelle verte à la maison, vous avez déjà tout ce dont vous avez besoin pour commencer à composter."
-            buttonText="En savoir plus"
-            imageSrc={Green}
-          />
-
-          <CustomCard
-            title="Poubelle Rouge : Stop aux Déchets Dangereux"
-            description="Certains déchets ne peuvent pas simplement être jetés à la poubelle comme les autres. Les déchets dangereux, tels que les piles, les produits chimiques ménagers et les médicaments périmés, nécessitent une élimination spéciale pour éviter de nuire à l'environnement et à la santé publique."
-            buttonText="En savoir plus"
-            imageSrc={Red}
-          />
-        </div>
-      </div>
-
-      <div className="md:w-full flex flex-row md:flex-row items-center justify-center bg-[url('/src/images/recyclage-dechets.jpg')] bg-cover bg-center h-80 md:h-[80]">
-        <div className="grid items-center justify-center text-[#000] md:w-[60%] mx-auto">
-          <h3 className="font-bold text-3xl mb-4">
-            Sauvons notre planète, agissons maintenant!
-          </h3>
-          <p className="font-bold text-2xl mb-4 ml-20">
-            Chaque geste compte pour préserver l'avenir.
-          </p>
-          <p className="font-bold text-xl mb-4 ml-40">
-            Ensemble, faisons la différence.
-          </p>
-          <button className="md:w-48 w-32 border border-[#13250e] flex justify-center items-center h-10 font-mono font-semibold text-[#13250e] mt-10 ml-[12rem] bg-[#f6faf3] rounded-xl">
-            <Link>Sauve le monde</Link>
-          </button>
-        </div>
-      </div>
-
-      <div className="flex justify-center px-10 py-5 pt-10 items-center text-[#13250e]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="md:w-[20rem]">
-            <div className="static bg-[url('/src/images/save-world.jpeg')] bg-cover bg-center md:w-[20rem] md:h-[90%]">
-              <div className="flex flex-col">
-                <div className="flex justify-center p-5 items-center ml-[15rem] bg-[#e9f5e3] md:h-[10rem] md:w-[9rem]">
-                  <p className="font-medium">
-                    Sauvons les 7,25 milliards de vies.
+      {/* section  */}
+      <section className=" py-10">
+        <div id="card-area">
+          <div className="wrapper text-[#355526] ">
+            <div className="box-area ">
+              <div className="box">
+                <img
+                  src="https://img.freepik.com/free-photo/close-up-environment-sign-collection_23-2148884839.jpg?t=st=1719308625~exp=1719312225~hmac=5a85328bee334d21df98f7fa115ed5a6bedf59b31c55292d58314fa50cf8d349&w=740"
+                  alt=""
+                  className="bg-cover bg-center"
+                />
+                <div className="overlay">
+                  <h3 className="leading-6 font-bold">
+                    Monde vert, monde sain
+                  </h3>
+                  <p className="text-[0.85rem]">
+                    Le recyclage aide à garder notre planète propre et verte en
+                    réduisant les déchets. En recyclant, on économise aussi des
+                    ressources naturelles et on protège les habitats des
+                    animaux, rendant notre monde plus sain et beau pour tout le
+                    monde.
+                  </p>
+                </div>
+              </div>
+              <div className="box">
+                <img
+                  src="https://img.freepik.com/free-photo/close-up-woman-holding-earth-globe_23-2148884837.jpg?t=st=1719308055~exp=1719311655~hmac=637b349eb3457379a58d62673cf4609ada6423a76bd93ad406c973d0a40c480e&w=740"
+                  alt=""
+                />
+                <div className="overlay">
+                  <h3 className="leading-6 font-bold">
+                    Écologie, chant de la Terre
+                  </h3>
+                  <p className=" text-[0.85rem] ">
+                    L&apos;écologie, c&apos;est prendre soin de notre planète,
+                    comme un jardinier qui prend soin de ses plantes. En
+                    respectant la nature, nous aidons la Terre à rester belle et
+                    pleine de vie, pour nous et pour les générations futures.
+                  </p>
+                </div>
+              </div>
+              <div className="box">
+                <img
+                  src="https://img.freepik.com/free-photo/digital-screen-with-environment-day_23-2148884835.jpg?t=st=1719308385~exp=1719311985~hmac=a7d8b41a6018860342e163da71f482ac1a7150366bc5c18591d7efa55f99cc72&w=740"
+                  alt=""
+                />
+                <div className="overlay">
+                  <h3 className="leading-6 font-bold">Éco Monde</h3>
+                  <p className="text-[0.85rem]">
+                    Éco Monde est un jour où nous nous unissons pour protéger et
+                    prendre soin de notre planète. C&apos;est une journée pour
+                    planter, recycler et apprendre à vivre en harmonie avec la
+                    nature.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="md:h-[2.4rem] flex items-center bg-[#e9f5e3] pl-5 md:w-[100%] text-black">
-              <p>Engagez-vous comme bénévole!</p>
-            </div>
-          </div>
-          <div className="ml-8 md:w-[20rem] pt-4">
-            <div className="font-bold text-2xl">
-              <h4>Rejoignez la course pour un monde meilleur</h4>
-            </div>
-            <div className="pt-2">
-              <p>
-                La course pour un monde meilleur, où chaque action compte.
-                Ensemble, faisons avancer la cause de la durabilité et de
-                l'égalité pour tous.
-              </p>
-            </div>
-            <div className="pt-4 grid grid-cols-1 md:grid-cols gap-4">
-              <CustomTextSection text="Journée de sensibilisation au recyclage" />
-              <CustomTextSection text="Nettoyage de l'environnement" />
-              <CustomTextSection text="Atelier de réparation et de réutilisation" />
-            </div>
           </div>
         </div>
-      </div>
-
-      <div className="flex justify-center items-center pt-5 p-6">
-        <div className="grid justify-center items-center md:w-[60rem] text-[#13250e]">
-          <div className="grid items-center md:ml-[10rem]">
-            <h2 className="text-4xl font-bold pt-6">Témoignages Inspirants</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 md:w-[50rem] my-10 mb-8 rounded-lg shadow-sm md:mb-12 gap-3 dark:bg-gray-800">
-            <TestimonialCard
-              name="John Doe"
-              testimonial="La journée de sensibilisation au recyclage était géniale! Maintenant, je sais comment protéger notre planète en recyclant correctement."
-              imageUrl={Red}
-            />
-            <TestimonialCard
-              name="Irène Da silva"
-              testimonial="Nettoyer l'environnement, c'était super amusant! Maintenant, je sais que chaque déchet ramassé fait une différence pour notre planète."
-              imageUrl="/path/to/john-doe-profile.jpg"
-            />
-            <TestimonialCard
-              name="John Doe"
-              testimonial="J'ai adoré l'atelier de réparation! Maintenant, je sais comment donner une seconde vie à mes vieux jouets et éviter de les jeter."
-              imageUrl="/path/to/john-doe-profile.jpg"
-            />
-          </div>
+      </section>
+      {/* section infos */}
+      <div className=" max-w-srceen-xl text-center md:w-full flex  justify-center relative bg-[url('/src/images/recyclage-dechets.jpg')] bg-cover bg-center h-44 md:h-80">
+        <div className="absolute w-full h-full bg-black top-0 left-0 bg-opacity-50 z-0"></div>
+        <div className="max-w-xl  flex items-center mb-10 md:mx-auto sm:text-center mt-[2.5rem] lg:max-w-2xl z-10 text-white md:mb-12">
+          <h2
+            className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-"
+            data-aos="flip-left"
+          >
+            <span className="relative inline-block">
+              <svg
+                viewBox="0 0 52 24"
+                fill="currentColor"
+                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+              >
+                <defs>
+                  <pattern
+                    id="679d5905-e08c-4b91-a66c-84aefbb9d2f5"
+                    x="0"
+                    y="0"
+                    width=".135"
+                    height=".30"
+                  >
+                    <circle cx="1" cy="1" r=".7" />
+                  </pattern>
+                </defs>
+                <rect
+                  fill="url(#679d5905-e08c-4b91-a66c-84aefbb9d2f5)"
+                  width="52"
+                  height="24"
+                />
+              </svg>
+              <span className="relative">Le</span>
+            </span>{" "}
+            monde de demain c&apos;est nous avec nos actes
+          </h2>
         </div>
       </div>
-
-      <NewsletterForm />
-
-      <div className=" flex justify-center items-center h-[20rem] w-full my-10 pt-6">
-        <div className="grid grid-cols-3 items-center text-[#13250e] w-[49rem] gap-5 px-5">
-          <div className="text-2xl font-bold">
-            <h4>
-              Vers un Avenir Lumineux : Notre Engagement envers la Gestion des
-              Déchets pour les Enfants
-            </h4>
-          </div>
-          <div className="text-[0.60rem] h-[10rem] ">
-            <p>
-              Dans notre engagement envers la gestion des déchets pour les
-              enfants, nous nous efforçons de créer un avenir lumineux où chaque
-              enfant peut grandir dans un environnement propre et sain. En
-              travaillant main dans la main avec les jeunes générations, nous
-              visons à les éduquer sur l'importance de prendre soin de notre
-              planète et à les inspirer à agir pour un futur meilleur. En leur
-              offrant des opportunités d'apprentissage et d'action, nous les
-              encourageons à devenir des champions de l'environnement, prêts à
-              relever les défis de la durabilité et de la protection de notre
-              monde pour les années à venir. Rejoignez-nous dans cette mission
-              pour un avenir plus propre et plus radieux pour nos enfants et les
-              générations futures.
-            </p>
-          </div>
-          <div>
-            <img src={Waste} alt="" />
-          </div>
-        </div>
-      </div>
-
+      {/* section tri */}
+      <Tri />
+      {/* section step */}
+      <Step />
+      {/* section gallery */}
       <GallerieSection />
-
-      <div className="flex flex-col justify-between items-center md:h-48 pt-5 h-full w-full py-5 p-10 bg-[#d3eac8]">
-        <div className="md:flex  md:flex-row justify-center gap-10 w-2/3 md:w-[48rem] text-[#4c8435] h-full">
-          <div className="flex flex-col justify-center">
-            <div className="flex items-center gap-4 font-bold">
+      {/* section blog */}
+      <Blog />
+      {/* section engagement */}
+      <div className="flex flex-col  items-center md:h-48 pt-5 pb-5 px-5 md:px-10 h-full w-full bg-[#eaf5e3]">
+        <div className="md:flex gap-5 text-[#4c8435] h-full">
+          <div className="grid grid-flow-col justify-center items-center">
+            <div className="flex items-center gap-4 font-serif">
               <img
                 src={Logorec}
                 alt="Recyclage"
                 className="w-16 md:w-16 bg-cover bg-center h-16"
               />
-              <p className="text-xl w-[19rem]">
-                Prêt à devenir un héros de l'environnement? Rejoins-nous pour
-                notre grand nettoyage écologique!
+              <p className="text-[1.2rem] md:text-3xl ">
+                Prêt à devenir un héros de l&apos;environnement ?
               </p>
             </div>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <button className="bg-[#3d692c] border border-[#345427] text-[#f6faf3] w-48 md:w-36 h-14 font-medium text-xl">
+            <button className="text-[#2c4621] bg-[#f5f6cb] border rounded-lg p-4 border-[#64481f] w-full  font-bold md:px-10 md:text-[1rem] ">
               Participer
             </button>
           </div>
         </div>
       </div>
+      {/* section témoignages */}
+      <section className="text-neutral-700 dark:text-neutral-300 px-16 my-10">
+        <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
+          <h3 className="mb-6 text-3xl font-bold">Témoignages</h3>
+        </div>
 
-      <div className="flex justify-center items-center pt-10 py-5 ">
-        <div className="grid grid-cols-3 justify-between  w-[45rem] ">
-          <div className="container mx-auto px-4">
-            <BlogCard
-              imageUrl="/path/to/your/image.jpg"
-              title="Titre de l'article"
-              excerpt="Extrait de l'article..."
-              link="/chemin/vers/plus-de-lectures"
-            />
-            {/* Vous pouvez ajouter plus de BlogCard ici pour afficher plusieurs articles */}
+        <div className="grid gap-8 text-center md:grid-cols-3">
+          <div>
+            <div className="block rounded-lg bg-white shadow-lg dark:shadow-black/30">
+              <div className="h-28 overflow-hidden rounded-t-lg bg-[#af901f]"></div>
+              <div className="mx-auto -mt-12 w-24  overflow-hidden rounded-full border-2 border-white bg-white">
+                <img
+                  src="https://img.freepik.com/free-photo/portrait-teenager-home_23-2149332928.jpg?t=st=1719368059~exp=1719371659~hmac=3801401a52772dff1d0bc6f7d8cbef05b17634292d6231e19662b0395b56b97a&w=740"
+                  className="bg-cover bg-center h-[5.8rem] "
+                />
+              </div>
+              <div className="p-6">
+                <h4 className="mb-4 text-2xl font-semibold">Kimberly AHOUI</h4>
+                <hr />
+                <p className="mt-4">
+                  <span className="inline-block pe-2 [&>svg]:w-5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 448 512"
+                    >
+                      <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+                    </svg>
+                  </span>
+                  J&apos;ai donné une deuxième vie à un ancien jean en le
+                  transformant en sac.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="container mx-auto px-4">
-            <BlogCard
-              imageUrl="/path/to/your/image.jpg"
-              title="Titre de l'article"
-              excerpt="Extrait de l'article..."
-              link="/chemin/vers/plus-de-lectures"
-            />
-            {/* Vous pouvez ajouter plus de BlogCard ici pour afficher plusieurs articles */}
+          <div>
+            <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div className="h-28 overflow-hidden rounded-t-lg bg-[#4e8633]"></div>
+              <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
+                <img
+                  src="https://img.freepik.com/free-photo/portrait-young-african-boy_23-2148852712.jpg?t=st=1719367550~exp=1719371150~hmac=c815f7d22b23938aeed0b74941901b8a9d2daf5902c7ccfa83f1411584b7648e&w=740"
+                  className="bg-cover bg-center"
+                />
+              </div>
+              <div className="p-6">
+                <h4 className="mb-4 text-2xl font-semibold">Ange DOSSOU</h4>
+                <hr />
+                <p className="mt-4">
+                  <span className="inline-block pe-2 [&>svg]:w-5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 448 512"
+                    >
+                      <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+                    </svg>
+                  </span>
+                  J&apos;arrive à récycler aujourd&apos;hui grâce à ENVIRON.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="container mx-auto px-4">
-            <BlogCard
-              imageUrl="/path/to/your/image.jpg"
-              title="Titre de l'article"
-              excerpt="Extrait de l'article..."
-              link="/chemin/vers/plus-de-lectures"
-            />
-            {/* Vous pouvez ajouter plus de BlogCard ici pour afficher plusieurs articles */}
+          <div>
+            <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div className="h-28 overflow-hidden rounded-t-lg bg-[#af901f]"></div>
+              <div className="mx-auto -mt-12 w-24 h-24 overflow-hidden rounded-full border-2 border-white bg-black ">
+                <img
+                  src="https://img.freepik.com/free-photo/close-up-african-boy-portrait_23-2148860424.jpg?t=st=1719366908~exp=1719370508~hmac=f447e6ceb9e20dae8706286228b4534d4294eb9ff070d4f5542aa7664b5388ad&w=740"
+                  className="bg-cover bg-center h-[5.79rem] "
+                />
+              </div>
+              <div className="p-6">
+                <h4 className="mb-4 text-2xl font-semibold">John EDAH</h4>
+                <hr />
+                <p className="mt-4">
+                  <span className="inline-block pe-2 [&>svg]:w-5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 448 512"
+                    >
+                      <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+                    </svg>
+                  </span>
+                  Merci ENVIRON pour les atelier sur la gestion des déchets. je
+                  serai un écologiste pour sauver notre planète.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="flex justify-center items-center w-full h-[10rem] bg-emerald-900 bg-opacity-20 ">
-        <div className="container mx-auto px-4  text-center">
-          <h2 className="text-2xl font-bold mb-4">Nos Partenaires</h2>
-          <PartnerLogos
-            logos={[
-              "/path/to/partner2-logo.png",
-              "/path/to/partner2-logo.png",
-              "/path/to/partner2-logo.png",
-            ]}
-          />
-        </div>
-      </div>
+      </section>
     </>
   );
 }

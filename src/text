@@ -1,0 +1,115 @@
+            <p>
+              Les forêts luxuriantes ont cédé la place à des paysages arides et
+              dévastés par la déforestation. Les phénomènes naturels se
+              déchaînent avec une violence inouïe, les tempêtes, les inondations
+              et les incendies ravageant tout sur leur passage, exacerbés par le
+              réchauffement climatique que nous avons ignoré pendant trop
+              longtemps. Les ressources naturelles s&apos;épuisent, l&apos;air
+              devient irrespirable, l&apos;eau non potable. Dans ce monde
+              apocalyptique, les conséquences de notre négligence sont devenues
+              irréversibles.
+            </p>
+            <p>
+              Mais ce cauchemar n&apos;est pas inévitable. En prenant des
+              mesures drastiques dès maintenant pour réduire notre empreinte
+              écologique, nous pouvons encore changer le cours des choses et
+              préserver notre planète pour les générations futures.
+
+            </p>
+
+             <div className=" flex justify-center items-center h-[20rem] w-full my-10 pt-6">
+        <div className="grid grid-cols-3 items-center text-[#13250e] w-[49rem] gap-5 px-5">
+          <div className="text-2xl font-bold">
+            <h4>
+              Vers un Avenir Lumineux : Notre Engagement envers la Gestion des
+              Déchets pour les Enfants
+            </h4>
+          </div>
+          <div className="text-[0.60rem] h-[10rem] ">
+            <p>
+              Dans notre engagement envers la gestion des déchets pour les
+              enfants, nous nous efforçons de créer un avenir lumineux où chaque
+              enfant peut grandir dans un environnement propre et sain. En
+              travaillant main dans la main avec les jeunes générations, nous
+              visons à les éduquer sur l&apos;importance de prendre soin de notre
+              planète et à les inspirer à agir pour un futur meilleur. En leur
+              offrant des opportunités d&apos;apprentissage et d&apos;action, nous les
+              encourageons à devenir des champions de l&apos;environnement, prêts à
+              relever les défis de la durabilité et de la protection de notre
+              monde pour les années à venir. Rejoignez-nous dans cette mission
+              pour un avenir plus propre et plus radieux pour nos enfants et les
+              générations futures.
+            </p>
+          </div>
+          <div>
+            <img src={Waste} alt="" />
+          </div>
+        </div>
+      </div>
+
+
+https://cdn-s-www.ledauphine.com/images/1B40E2F3-0228-493F-B31F-2067EC023756/NW_detail/illustration-thomas-tessier-millepages-1670336628.jpg
+https://cdn-s-www.ledauphine.com/images/37E86522-28FE-4878-83A9-796DBCE365A1/NW_detail/illustration-thomas-tessier-millepages-1670336628.jpg
+https://cdn-s-www.ledauphine.com/images/7E0EEEE5-ADF8-43C5-BEA5-440C8C17883F/NW_detail/illustration-thomas-tessier-millepages-1670336628.jpg
+
+
+https://cdn-s-www.ledauphine.com/images/66C642A9-3FFD-4E10-9FCE-924067AC8839/NW_detail/millepages-thomas-tessier-1673521267.jpg
+https://cdn-s-www.ledauphine.com/images/6FF7E879-CB97-44E3-9427-E42BFDFB3497/NW_detail/millepages-thomas-tessier-1673521268.jpg
+
+
+
+
+
+import React from "react";
+export function FeaturedImageGallery() {
+  const data = [
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+    },
+    {
+      imgelink:
+        "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
+    },
+  ];
+ 
+  const [active, setActive] = React.useState(
+    "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  );
+ 
+  return (
+    <div className="grid gap-4">
+      <div>
+        <img
+          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+          src={active}
+          alt=""
+        />
+      </div>
+      <div className="grid grid-cols-5 gap-4">
+        {data.map(({ imgelink }, index) => (
+          <div key={index}>
+            <img
+              onClick={() => setActive(imgelink)}
+              src={imgelink}
+              className="h-20 max-w-full cursor-pointer rounded-lg object-cover object-center"
+              alt="gallery-image"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

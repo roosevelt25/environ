@@ -1,65 +1,107 @@
 import { useState } from "react";
+import Logo from "../logos/Logo environ 1.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <div className="bg-[#ffffff] text-[#3d692c] h-[5rem]  w-full">
-        <div className="flex items-center justify-between max-w-screen-xl mx-auto px-5 sm:px-8 md:px-10 xl:px-0">
-          <div>
-          <h4 className="font-[500] text-3xl">Environ&#174;</h4>
-        </div>
-
-        <div className="flex justify-between font-semibold">
-          <nav
-            className={`flex gap-12 text-sm items-center justify-between ${
-              isOpen ? "block" : "hidden"
-            } md:flex`}
+     <nav className="w-full z-20 top-0 start-0 border-gray-200 bg-[#f1f9ec] text-xl">
+  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src={Logo} className="h-16" alt="Logo" />
+    </Link>
+    <div className="flex md:order-2 space-x-3 rtl:space-x-reverse">
+      <button
+        onClick={toggleNavbar}
+        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-expanded={isOpen ? "true" : "false"}
+      >
+        <span className="sr-only">
+          {isOpen ? "Close main menu" : "Open main menu"}
+        </span>
+        <svg
+          className="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d={isOpen ? "M16 1L1 13M1 1L16 13" : "M1 1h15M1 7h15M1 13h15"}
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className={`items-center justify-between ${
+        isOpen ? "block bg-transparent" : "hidden"
+      } w-full md:flex md:w-auto md:order-1`}
+      id="navbar-sticky"
+    >
+      <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+        <li>
+          <Link
+            to="/"
+            className="block py-2 px-3 bg-[#7ebc5f] text-gray-900 md:hover:text-[#7ebc5f] rounded md:bg-transparent md:p-0"
           >
-            <ul className="no-underline  flex  gap-5 justify-center">
-              <li>
-                <Link to={"../views/Home.jsx"}>HOME</Link>
-              </li>
-              <li>
-                <Link to={"../views/Collective.jsx"}>SECTEURS</Link>
-              </li>
-              <li>
-                <Link to={"../views/Projet.jsx"}>PROJECTS</Link>
-              </li>
-              <li>
-                <Link to={"../views/AboutUs.jsx"}>ABOUT US</Link>
-              </li>
-              <li>
-                <Link to={"../views/Bloc.jsx"}>BLOC</Link>
-              </li>
-              <li>
-                <Link to={"../views/Contact.jsx"}>CONTACT</Link>
-              </li>
-            </ul>
-            <div className="flex gap-5 text-sm">
-              <button className="  hover:text-white transition-colors duration-200">
-                SIGN UP
-              </button>
-              <div className="border-separate bg-black w-0.5 h-20"></div>
-              <button className="  hover:text-white transition-colors duration-200">
-                DONATE NOW
-              </button>
-            </div>
-          </nav>
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-            <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
-              <path
-                fillRule="evenodd"
-                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        </div>
-        
-      </div>
+            Accueil
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="decoucrons-le-recyclage"
+            className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#7ebc5f] md:p-0"
+          >
+            Découvrons le recyclage
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="fabrique-éco"
+            className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#7ebc5f] md:p-0"
+          >
+            Fabrique Éco
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="aboutUs"
+            className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#7ebc5f] md:p-0"
+          >
+            Qui sommes nous
+          </Link>
+        </li>
+        <li className="md:hidden">
+          <Link
+            type="button"
+            className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#7ebc5f] md:p-0"
+          >
+            Faire un don
+          </Link>
+        </li>
+      </ul>
+    </div>
+    <div className="hidden md:flex md:order-2 space-x-3 rtl:space-x-reverse">
+      <Link
+        type="button"
+        className="hover:bg-[#3d692c] hover:text-white focus:ring-4 focus:outline-none focus:ring-[#3d692c] font-medium rounded-lg px-4 py-2 text-center dark:bg-[#3d692c] dark:hover:bg-[#3d692c] dark:focus:ring-blue-800"
+      >
+        Faire un don
+      </Link>
+    </div>
+  </div>
+</nav>
+
     </>
   );
 };
